@@ -1,0 +1,4 @@
+Write dev id's here, dev's have access to all of the functions,
+even if the RoleManager cfgs (or even ConfigManager) would die.
+Example:
+1234567890 0987654321 1029384756

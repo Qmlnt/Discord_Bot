@@ -1,0 +1,61 @@
+{"do_not_rewrite": true,
+"defaults": {
+    "embed": {
+        "title": "Error",
+        "description": "**Could not retrieve embed info :(**",
+        "color": [255,0,0]
+    },
+    "no_rights": [[255,100,100], "You can't use this command!"],
+    "no_command": "Command not found!",
+    "can't": "Naaah",
+    "done": "Done!"
+    },
+"ListenersExt": {
+    "no_command": "Command not found!",
+    "missing_arg": "Missing an argument, see ~help `command name`",
+    "member_join": "Wassup {user_mention} 😎",
+    "member_remove": "Bye {user_mention} 😮‍💨"
+},
+"clear": {
+    "done": "Done cleaning!"
+},
+"h": {
+    "fail": "***`can't help, sorry.`***",
+    "no_command": "Can't find command '`{command}`'",
+    "not_in_annot": "~{name}  ~~`can't get arguments`~~\nRole lvl: *unknown*\n`{doc}`"
+},
+"help": {
+    "embed": {
+        "title": "Help",
+        "description": "Prefix is ~\nThis message should help :D",
+        "color": [0,255,0]
+    },
+    "no_doc": "~~Can't find the doc~~",
+    "info": "Send '**~help ||(or ~h)|| `command name`**' for more info on a command."
+},
+"functions": {
+    "embed": {
+        "title": "Function roles",
+        "description": "The role number needed to use the func",
+        "color": [100,255,100]
+    }
+},
+"user_roles": {
+    "embed": {
+        "title": "User roles",
+        "description": "The __lesser__ the number, the __better__\n*sorry for pinging*",
+        "color": [100,255,100]
+    }
+},
+"user_role": {
+    "no_need": "{member} role lvl is {value} already!",
+    "done": "{member_mention} role lvl was set to {value}.",
+    "can't": [[255,255,0], "{author} tries to change {member} to {value} 😆?"]
+},
+"func_role": {
+    "done": "'{function}' role lvl was set to {value}.",
+    "no_function": "There is no function named '{function}'",
+    "no_need": "'{function}' role lvl is {value} already!",
+    "can't": [[255,255,0], "{author} tries to change {function} to {value} 😆?"]
+}
+}

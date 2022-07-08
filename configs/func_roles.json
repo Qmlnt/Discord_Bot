@@ -1,0 +1,20 @@
+{
+ "do_not_rewrite": true,
+ "user_role": 2,
+ "func_role": 1,
+ "clear": 2,
+ "extensions": 0,
+ "extension": 0,
+ "configs": 0,
+ "config": 0,
+ "functions": 2,
+ "user_roles": 2,
+ "function": 0,
+ "reload_devs": 0,
+ "main_ext": 0,
+ "shutdown": 0,
+ "help": 3,
+ "h": 3,
+ "hello": 3,
+ "move_messages": 1
+}
