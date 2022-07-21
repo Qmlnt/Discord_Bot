@@ -12,6 +12,21 @@ class Callables(commands.Cog):
 
     @commands.command()
     @use_roles
+    async def say(self, ctx: commands.Context, channel: typing.Optional[discord.TextChannel], *, content: str):
+        """Say given content to the given channel."""
+        await ctx.message.delete()
+        if not channel: channel = ctx
+        await channel.send(content)
+
+    @commands.command()
+    @use_roles
+    async def reply(self, ctx: commands.Context, message: discord.Message, *, content: str):
+        """Reply to some message in the current channel."""
+        await ctx.message.delete()
+        await message.reply(content)
+
+    @commands.command()
+    @use_roles
     async def move_messages(self, ctx: commands.Context, from_channel: discord.TextChannel, to_channel: discord.TextChannel, amount: int, ignore_members: commands.Greedy[discord.Member]):
         """Move messages from one channel to anther."""
         ignore_members = [author.id for author in ignore_members]
@@ -36,17 +51,17 @@ class Callables(commands.Cog):
 
     @commands.command()
     @use_roles
-    async def clear(self, ctx: commands.Context, amount: int = 10, check: typing.Union[discord.Member, str] = None):
+    async def clear(self, ctx: commands.Context, amount: int = 10, msg_filter: typing.Union[discord.Member, str] = None):
         """Clear the channel messages."""
 
-        if not check:
+        if not msg_filter:
             ch = None
-        elif isinstance(check, discord.Member):
-            ch = lambda m: m.author.id == check.id
-        elif isinstance(check, str):
-            ch = lambda m: m.content == check
+        elif isinstance(msg_filter, discord.Member):
+            ch = lambda m: m.author.id == msg_filter.id
+        elif isinstance(msg_filter, str):
+            ch = lambda m: msg_filter in m.content
         else:
-            raise Exception(f"Unknown check type in clear command: {type(check)}")
+            raise Exception(f"Unknown check type in clear command: {type(msg_filter)}")
 
         await ctx.channel.purge(limit=amount+1, check=ch)
         await self.bot.MessageManager.send(ctx, "clear", "done")
